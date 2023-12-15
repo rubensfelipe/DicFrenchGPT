@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,3382</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,3768</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -141,7 +141,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3317" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3703" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="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" Name="API_KEY" />
       <Variable x:TypeArguments="x:Int32" Name="status" />
@@ -153,6 +153,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_mot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_inputMots" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_motAux" />
+      <Variable x:TypeArguments="x:String" Name="str_dtMot" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -206,7 +207,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                 </ui:HttpClient.Cookies>
                 <ui:HttpClient.Headers>
-                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer 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</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer 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</InArgument>
                 </ui:HttpClient.Headers>
                 <ui:HttpClient.Parameters>
                   <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -315,6 +316,17 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim stringBuilder As New System.Text.StringBuilder()&#xD;&#xA;&#xD;&#xA;' Adicionando os nomes das colunas&#xD;&#xA;For Each column As DataColumn In in_dtMot.Columns&#xD;&#xA;    stringBuilder.Append(column.ColumnName + vbTab)&#xD;&#xA;Next&#xD;&#xA;stringBuilder.AppendLine()&#xD;&#xA;&#xD;&#xA;' Adicionando os valores das linhas&#xD;&#xA;For Each row As DataRow In in_dtMot.Rows&#xD;&#xA;    For Each item In row.ItemArray&#xD;&#xA;        stringBuilder.Append(item.ToString() + vbTab)&#xD;&#xA;    Next&#xD;&#xA;    stringBuilder.AppendLine()&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Atribuindo o resultado à variável de saída&#xD;&#xA;out_strDT = stringBuilder.ToString()&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="617,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMot">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_mot" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strDT">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_dtMot" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Datatable is: &quot;+Environment.NewLine+str_dtMot]" />
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_mot]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="617,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="DicGPT" WorkbookPath="[out_DicGPT]" />
     <ui:WriteRange AddHeaders="True" DataTable="[dt_motAux]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="617,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="DicGPT" StartingCell="F:F" WorkbookPath="[out_DicGPT]" />
   </Sequence>
