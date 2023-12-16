@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,3932</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,3819</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -141,7 +141,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3754" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="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" Name="API_KEY" />
       <Variable x:TypeArguments="x:Int32" Name="status" />
@@ -154,6 +154,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_inputMots" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_motAux" />
       <Variable x:TypeArguments="x:String" Name="str_dtMot" />
+      <Variable x:TypeArguments="x:Int32" Name="count" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -166,7 +167,7 @@
         <OutArgument x:TypeArguments="x:String">[API_KEY]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">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</InArgument>
+        <InArgument x:TypeArguments="x:String">["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"]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -177,13 +178,13 @@
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_inputMots]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="617,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="queue d'attent" WorkbookPath="[in_nouveauMots]" />
     <ui:BuildDataTable DataTable="[dt_mot]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Exemple&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Transcription&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Definition&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:BuildDataTable DataTable="[dt_motAux]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Parole&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_inputMots]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="617,2385" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[count]" DataTable="[dt_inputMots]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="617,2566" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="583,2199" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="583,2380" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,7 +232,7 @@
               </ui:HttpClient>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[status.ToString+&quot;: &quot;+apiResponse.ToString]" />
             </Sequence>
-            <Sequence DisplayName="Conversão da resposta de JSON para dicionário" sap:VirtualizedContainerService.HintSize="541,1465" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Conversão da resposta de JSON para dicionário" sap:VirtualizedContainerService.HintSize="541,1646" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Object" Name="jsonResponse" />
                 <Variable x:TypeArguments="x:String" Name="exemple" />
@@ -284,6 +285,7 @@
                   <InArgument x:TypeArguments="x:String">[exemple.Replace("Example :","")]</InArgument>
                 </Assign.Value>
               </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[(count+1).ToString+&quot;: &quot;+exemple.ToString]" />
               <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -329,13 +331,35 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim stringBuilder As New System.Text.StringBuilder()&#xA;&#xA;' Adicionando os nomes das colunas&#xA;For Each column As DataColumn In in_dtMot.Columns&#xA;    stringBuilder.Append(column.ColumnName + vbTab)&#xA;Next&#xA;stringBuilder.AppendLine()&#xA;&#xA;' Adicionando os valores das linhas&#xA;For Each row As DataRow In in_dtMot.Rows&#xA;    For Each item In row.ItemArray&#xA;        stringBuilder.Append(item.ToString() + vbTab)&#xA;    Next&#xA;    stringBuilder.AppendLine()&#xA;Next&#xA;&#xA;' Atribuindo o resultado à variável de saída&#xA;out_strDT = stringBuilder.ToString()&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="617,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
-      <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMot">[dt_mot]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_strDT">[str_dtMot]</OutArgument>
-      </ui:InvokeCode.Arguments>
-    </ui:InvokeCode>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Datatable is: &quot;+Environment.NewLine+str_dtMot]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Convert a datatable to String" Code="Dim stringBuilder As New System.Text.StringBuilder()&#xA;&#xA;' Adicionando os nomes das colunas&#xA;For Each column As DataColumn In in_dtMot.Columns&#xA;    stringBuilder.Append(column.ColumnName + vbTab)&#xA;Next&#xA;stringBuilder.AppendLine()&#xA;&#xA;' Adicionando os valores das linhas&#xA;For Each row As DataRow In in_dtMot.Rows&#xA;    For Each item In row.ItemArray&#xA;        stringBuilder.Append(item.ToString() + vbTab)&#xA;    Next&#xA;    stringBuilder.AppendLine()&#xA;Next&#xA;&#xA;' Atribuindo o resultado à variável de saída&#xA;out_strDT = stringBuilder.ToString()&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,196" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMot">[dt_mot]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_strDT">[str_dtMot]</OutArgument>
+            </ui:InvokeCode.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeCode>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Datatable is: &quot;+Environment.NewLine+str_dtMot]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_mot]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="617,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="DicGPT" WorkbookPath="[out_DicGPT]" />
     <ui:WriteRange AddHeaders="True" DataTable="[dt_motAux]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="617,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="DicGPT" StartingCell="F:F" WorkbookPath="[out_DicGPT]" />
   </Sequence>
