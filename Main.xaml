@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,3768</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,3932</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -141,7 +141,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3703" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="679,3867" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="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" Name="API_KEY" />
       <Variable x:TypeArguments="x:Int32" Name="status" />
@@ -161,6 +161,19 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;test&quot;]" />
+    <Assign sap2010:Annotation.AnnotationText="IMPORTANT: CREATE YOUR OWN API KEY IN OPEN AI WEBSITE AND ADD HERE" sap:VirtualizedContainerService.HintSize="617,124" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[API_KEY]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">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</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_inputMots]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="617,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="queue d'attent" WorkbookPath="[in_nouveauMots]" />
     <ui:BuildDataTable DataTable="[dt_mot]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Exemple&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Transcription&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Definition&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:BuildDataTable DataTable="[dt_motAux]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Parole&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
@@ -207,7 +220,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                 </ui:HttpClient.Cookies>
                 <ui:HttpClient.Headers>
-                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer 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</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer "+ API_KEY]</InArgument>
                 </ui:HttpClient.Headers>
                 <ui:HttpClient.Parameters>
                   <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -316,14 +329,10 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim stringBuilder As New System.Text.StringBuilder()&#xD;&#xA;&#xD;&#xA;' Adicionando os nomes das colunas&#xD;&#xA;For Each column As DataColumn In in_dtMot.Columns&#xD;&#xA;    stringBuilder.Append(column.ColumnName + vbTab)&#xD;&#xA;Next&#xD;&#xA;stringBuilder.AppendLine()&#xD;&#xA;&#xD;&#xA;' Adicionando os valores das linhas&#xD;&#xA;For Each row As DataRow In in_dtMot.Rows&#xD;&#xA;    For Each item In row.ItemArray&#xD;&#xA;        stringBuilder.Append(item.ToString() + vbTab)&#xD;&#xA;    Next&#xD;&#xA;    stringBuilder.AppendLine()&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Atribuindo o resultado à variável de saída&#xD;&#xA;out_strDT = stringBuilder.ToString()&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="617,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim stringBuilder As New System.Text.StringBuilder()&#xA;&#xA;' Adicionando os nomes das colunas&#xA;For Each column As DataColumn In in_dtMot.Columns&#xA;    stringBuilder.Append(column.ColumnName + vbTab)&#xA;Next&#xA;stringBuilder.AppendLine()&#xA;&#xA;' Adicionando os valores das linhas&#xA;For Each row As DataRow In in_dtMot.Rows&#xA;    For Each item In row.ItemArray&#xA;        stringBuilder.Append(item.ToString() + vbTab)&#xA;    Next&#xA;    stringBuilder.AppendLine()&#xA;Next&#xA;&#xA;' Atribuindo o resultado à variável de saída&#xA;out_strDT = stringBuilder.ToString()&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="617,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
       <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMot">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_mot" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_strDT">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_dtMot" />
-        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMot">[dt_mot]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strDT">[str_dtMot]</OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Datatable is: &quot;+Environment.NewLine+str_dtMot]" />
