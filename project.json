@@ -1,7 +1,7 @@
 {
   "name": "DicGPT",
   "projectId": "b4d287a4-25c9-493f-9ec4-7da642f8b65f",
-  "description": "",
+  "description": "Este projeto é uma API do chatGPT. O input desta API será uma request para AI que irá buscar uma palavra em um dicionário francês. O output será o exemplo desta palavra em uma frase, transcrição fonética e definição desta palavra.",
   "main": "Main.xaml",
   "dependencies": {
     "Newtonsoft.Json": "[13.0.3]",
@@ -16,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.10.1.0",
-  "projectVersion": "1.0.2",
+  "projectVersion": "1.0.3",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
